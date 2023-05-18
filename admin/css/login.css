@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+}
+* {
+  margin: 0!important;
+  padding: 0!important;
+  box-sizing: border-box!important;
+  font-family: "Poppins", sans-serif!important;
+}
+body {
+  min-height: 100vh!important;
+  display: flex!important;
+  align-items: center!important;
+  justify-content: center!important;
+  padding: 30px!important;
+}
+.container {
+  position: relative!important;
+  max-width: 850px!important;
+  width: 100%!important;
+  background: #d32929!important;
+  padding: 40px 30px!important;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)!important;
+  perspective: 2700px!important;
+}
+.container .cover {
+  position: absolute!important;
+  top: 0!important;
+  left: 50%!important;
+  height: 100%!important;
+  width: 50%!important;
+}
+.container .cover .front{
+  position: absolute!important;
+  top: 0!important;
+  left: 0!important;
+  height: 100%!important;
+  width: 100%!important;
+}
+.container .cover::before,
+.container .cover::after {
+  content: ''!important;
+  position: absolute!important;
+  height: 100%!important;
+  width: 100%;
+  background-image: linear-gradient(rgb(0, 73, 73), rgb(2, 37, 21))!important;
+  opacity: 0.5!important;
+  z-index: 12!important;
+}
+.container .cover img {
+  position: absolute!important;
+  height: 100%!important;
+  width: 100%!important;
+  object-fit: cover!important;
+  z-index: 10!important;
+}
+.container .cover .text {
+  position: absolute!important;
+  z-index: 130!important;
+  height: 100%!important;
+  width: 100%!important;
+  display: flex!important;
+  flex-direction: column!important;
+  align-items: center!important;
+  justify-content: center!important;
+}
+.container .cover .text img {
+  position: relative!important;
+  height: auto!important;
+  width: 60%!important;
+}
+.container .cover .text .image-logo {
+  content: ""!important;
+  display: flex!important;
+  align-items: center!important;
+  justify-content: center!important;
+
+}
+.cover .text .text-1,
+.cover .text .text-2 {
+  margin: 5vh!important;
+  font-size: 5vh!important;
+  font-weight: 900!important;
+  white-space: none!important;
+  color: #fff!important;
+  text-align: center!important;
+}
+.cover .text .text-2 {
+  font-size: 15px!important;
+  font-weight: 500!important;
+}
+.container .forms {
+  height: 100%!important;
+  width: 100%!important;
+  background: #fff!important;
+}
+
+.container .form-content {
+  display: flex!important;
+  align-items: center!important;
+  justify-content: space-between!important;
+}
+
+.form-content .login-form{
+  width: calc(100% / 2 - 25px)!important;
+}
+.forms .form-content .title {
+  position: relative!important;
+  font-size: 24px!important;
+  font-weight: 500!important;
+  color: #333!important;
+}
+.forms .form-content .title:before {
+  content: ''!important;
+  position: absolute!important;
+  left: 0!important;
+  bottom: 0!important;
+  height: 3px!important;
+  width: 25px!important;
+  background: var(--bs-green)!important;
+}
+.forms .signup-form .title:before {
+  width: 20px!important;
+}
+.forms .form-content .input-boxes {
+  margin-top: 30px!important;
+}
+.forms .form-content .input-box {
+  display: flex!important;
+  align-items: center!important;
+  height: 50px!important;
+  width: 100%!important;
+  margin: 10px 0!important;
+  position: relative!important;
+}
+.form-content .input-box input {
+  height: 100%!important;
+  width: 100%!important;
+  outline: none!important;
+  border: none!important;
+  padding: 0 30px!important;
+  font-size: 16px!important;
+  font-weight: 500!important;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2)!important;
+  transition: all 0.3s ease!important;
+}
+.form-content .input-box input:focus,
+.form-content .input-box input:valid {
+  border-color: var(--bs-green)!important;
+}
+.form-content .input-box i {
+  position: absolute!important;
+  color: var(--bs-green)!important;
+  font-size: 17px!important;
+}
+.forms .form-content .text {
+  font-size: 14px!important;
+  font-weight: 500!important;
+  color: #333!important;
+}
+.forms .form-content .text a {
+  text-decoration: none!important;
+}
+.forms .form-content .text a:hover {
+  text-decoration: underline!important;
+}
+.forms .form-content .button {
+  color: #fff!important;
+  margin-top: 40px!important;
+}
+.forms .form-content .button input {
+  color: #fff!important;
+  background-image: linear-gradient(rgb(0, 73, 73), rgb(2, 37, 21))!important;
+  border-radius: 6px!important;
+  padding: 0!important;
+  cursor: pointer!important;
+  transition: all 0.4s ease!important;
+}
+.forms .form-content .button input:hover {
+  background-image: linear-gradient(rgb(11, 196, 196), rgb(2, 37, 21))!important;
+}
+.forms .form-content label {
+  color: var(--bs-green)!important;
+  cursor: pointer!important;
+}
+.forms .form-content label:hover {
+  text-decoration: underline!important;
+}
+.forms .form-content .login-text {
+  text-align: center!important;
+  margin-top: 25px!important;
+}
+@media (max-width: 730px) {
+  .container .cover {
+    display: none!important;
+  }
+  .form-content .login-form {
+    width: 100%!important;
+  }
+}
