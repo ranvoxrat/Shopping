@@ -31,17 +31,15 @@ switch ($action) {
    if(isset($_POST['btnorder'])){
     $pid= $_POST['PROID'];
     $price= $_POST['PROPRICE'];
-
     $sql = "SELECT * FROM `tblproduct` WHERE `PROID` ='" . $pid. "'";
     $mydb->setQuery($sql);
     $result = $mydb->loadResultList();
-
     foreach ($result as $row) {
     	# code...
     	$tot = floatval($price) * 1;
 				$qty = 1;
 			addtocart($pid,$qty , $tot); 
-			header("Location:index.php?q=cart");
+			header("Location:../index.php?q=cart");
     }
   
 }

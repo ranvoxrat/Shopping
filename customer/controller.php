@@ -5,11 +5,11 @@ $action = (isset($_GET['action']) && $_GET['action'] != '') ? $_GET['action'] : 
 
 switch ($action) {
 	case 'add' :
-	doInsert();
+	  doInsert();
 	break;
 	
 	case 'edit' :
-	doEdit();
+	  doEdit();
 	break;
 
 	case 'delete' :
@@ -65,7 +65,7 @@ function doInsert(){
 			 if(!isset($_POST['proid']) || (isset($_POST['proid']) && empty($_POST['proid']))){
 			  echo "<script> alert('You are now successfully registered. It will redirect to your order details.'); </script>";
 						// redirect(web_root."index.php?q=orderdetails");
-						// header(web_root."Location: index.php?q=orderdetails");
+					   header("Location:../index.php?q=orderdetails");
 			 }else{
 			 	$proid = $_GET['proid'];
 			 	$id = mysqli_insert_id(); 
@@ -73,7 +73,7 @@ function doInsert(){
 			 	$mydb->setQuery($query);
 			 	$mydb->executeQuery();
 			 	 echo "<script> alert('You are now successfully registered. It will redirect to your profile.'); </script>";
-				header("Location:../index.php?q=profile");
+				header("Location:index.php?q=profile");
 			 }
 		 
 		

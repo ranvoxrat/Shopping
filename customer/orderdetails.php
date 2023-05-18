@@ -1,7 +1,7 @@
 <?php 
 
 if (!isset($_SESSION['CUSID'])){
-redirect(web_root."index.php");
+  header("Location:index.php");
 }
  
 
@@ -93,11 +93,8 @@ $singlecustomer = $customer->single_customer($customerid);
 
                       }
                 }
-              ?>
-            
-
+              ?>        
                 </tbody>
-                
               </table>  
                 <div class="  pull-right">
                   <p align="right">

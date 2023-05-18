@@ -1,6 +1,5 @@
 <?php
 require_once("../include/initialize.php");
-
 ?>
 <?php
 // login confirmation

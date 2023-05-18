@@ -11,7 +11,7 @@ class Promo {
 	function listofpromo(){
 		global $mydb;
 		$mydb->setQuery("SELECT * FROM ".self::$tblname);
-		return $cur;
+		return $mydb;
 	}
 	// function find_promo($id="",$name=""){
 	// 	global $mydb;

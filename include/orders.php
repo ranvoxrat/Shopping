@@ -11,7 +11,7 @@ class Order {
 	function listoforders(){
 		global $mydb;
 		$mydb->setQuery("SELECT * FROM ".self::$tblname);
-		return $cur;
+		return $mydb;
 	}
 	
 	function single_orders($id=""){

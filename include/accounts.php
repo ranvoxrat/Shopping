@@ -2,7 +2,6 @@
 require_once(LIB_PATH.DS.'database.php');
 class User {
 	protected static  $tblname = "tbluseraccount";
-
 	function dbfields () {
 		global $mydb;
 		return $mydb->getfieldsononetable(self::$tblname);
@@ -12,11 +11,9 @@ class User {
 		$mydb->setQuery("SELECT * FROM ".self::$tblname);
 		return $cur;
 	}
- 
 	function find_user($id="",$user_name=""){
 		global $mydb;
-		$mydb->setQuery("SELECT * FROM ".self::$tblname." 
-			WHERE USERID = {$id} OR U_USERNAME = '{$user_name}'");
+		$mydb->setQuery("SELECT * FROM ".self::$tblname."WHERE USERID = {$id} OR U_USERNAME = '{$user_name}'");
 		$cur = $mydb->executeQuery();
 		$row_count = $mydb->num_rows($cur);
 		return $row_count;
@@ -31,11 +28,11 @@ class User {
 		$row_count = $mydb->num_rows($cur);//get the number of count
 		 if ($row_count == 1){
 		 $user_found = $mydb->loadSingleResult();
-		 	$_SESSION['USERID']   		= $user_found->USERID;
-		 	$_SESSION['U_NAME']      	= $user_found->U_NAME;
-		 	$_SESSION['U_USERNAME'] 	= $user_found->U_USERNAME;
-		 	$_SESSION['U_PASS'] 		= $user_found->U_PASS;
-		 	$_SESSION['U_ROLE'] 		= $user_found->U_ROLE;
+		 	$_SESSION['USERID'] = $user_found->USERID;
+		 	$_SESSION['U_NAME'] = $user_found->U_NAME;
+		 	$_SESSION['U_USERNAME'] = $user_found->U_USERNAME;
+		 	$_SESSION['U_PASS'] = $user_found->U_PASS;
+		 	$_SESSION['U_ROLE'] = $user_found->U_ROLE;
 		   return true;
 		 }else{
 		 	return false;
@@ -51,7 +48,6 @@ class User {
 	/*---Instantiation of Object dynamically---*/
 	static function instantiate($record) {
 		$object = new self;
-
 		foreach($record as $attribute=>$value){
 		  if($object->has_attribute($attribute)) {
 		    $object->$attribute = $value;
@@ -59,7 +55,6 @@ class User {
 		} 
 		return $object;
 	}
-	
 	
 	/*--Cleaning the raw data before submitting to Database--*/
 	private function has_attribute($attribute) {
@@ -91,7 +86,6 @@ class User {
 	  return $clean_attributes;
 	}
 	
-	
 	/*--Create,Update and Delete methods--*/
 	public function save() {
 	  // A new record won't have an id yet.
@@ -104,6 +98,7 @@ class User {
 		// - INSERT INTO table (key, key) VALUES ('value', 'value')
 		// - single-quotes around all values
 		// - escape all values to prevent SQL injection
+		// - aside from this you can also use prepared statedment 
 		$attributes = $this->sanitized_attributes();
 		$sql = "INSERT INTO ".self::$tblname." (";
 		$sql .= join(", ", array_keys($attributes));
@@ -111,7 +106,6 @@ class User {
 		$sql .= join("', '", array_values($attributes));
 		$sql .= "')";
 	echo $mydb->setQuery($sql);
-	
 	 if($mydb->executeQuery()) {
 	    $this->id = $mydb->insert_id();
 	    return true;
@@ -134,18 +128,14 @@ class User {
 	 	if(!$mydb->executeQuery()) return false; 	
 		
 	}
-
 	public function delete($id=0) {
 		global $mydb;
 		  $sql = "DELETE FROM ".self::$tblname;
 		  $sql .= " WHERE USERID=". $id;
 		  $sql .= " LIMIT 1 ";
 		  $mydb->setQuery($sql);
-		  
 			if(!$mydb->executeQuery()) return false; 	
 	
 	}	
-
-
 }
 ?>

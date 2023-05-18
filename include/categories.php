@@ -11,7 +11,7 @@ class Category {
 	function listofcategory(){
 		global $mydb;
 		$mydb->setQuery("SELECT * FROM ".self::$tblname);
-		return $cur;
+		return $mydb;
 	}
 	function find_category($id="",$name=""){
 		global $mydb;
@@ -21,7 +21,6 @@ class Category {
 		$row_count = $mydb->num_rows($cur);
 		return $row_count;
 	}
-	 
 	function single_category($id=""){
 			global $mydb;
 			$mydb->setQuery("SELECT * FROM ".self::$tblname." 
@@ -32,7 +31,6 @@ class Category {
 	/*---Instantiation of Object dynamically---*/
 	static function instantiate($record) {
 		$object = new self;
-
 		foreach($record as $attribute=>$value){
 		  if($object->has_attribute($attribute)) {
 		    $object->$attribute = $value;

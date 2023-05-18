@@ -25,9 +25,5 @@ require_once(LIB_PATH.DS."customers.php");
 require_once(LIB_PATH.DS."orders.php");
 require_once(LIB_PATH.DS."summary.php");
 require_once(LIB_PATH.DS."settings.php");
-
-
-
-
 require_once(LIB_PATH.DS."database.php");
 ?>

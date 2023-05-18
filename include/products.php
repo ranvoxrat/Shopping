@@ -11,7 +11,7 @@ class Product {
 	function listofproducts(){
 		global $mydb;
 		$mydb->setQuery("SELECT * FROM ".self::$tblname);
-		return $cur;
+		return $mydb;
 	}
 	function find_products($id="",$name=""){
 		global $mydb;

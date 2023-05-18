@@ -194,7 +194,7 @@
                                           "image"></label>
                                           <div class="col-md-8">
                                         <p>  I <input type="checkbox" id="conditionterms" name="conditionterms" value="checkbox" />
-                                           <small>Agree with the <a class="toggle-modal"  onclick=" OpenPopupCenter('terms.php','Terms And Codition','600','600')"  ><b>TERMS AND CONDITION</b></a> of Janobe Source Code.</small>
+                                           <small>Agree with the <a class="toggle-modal"  onclick=" OpenPopupCenter('terms.php','Terms And Codition','600','600')"  ><b>TERMS AND CONDITION</b></a> of Ferus online Shop.</small>
                                            
                                           </div>
                                         </div>
@@ -214,10 +214,7 @@
 
                                         
 
-                                     </div>
-                                    <div class="panel-footer">
-                                        <p align="left">&copy; <a href="https://bit.ly/2LPn9Wu">Janobe Source Code</a></p>
-                                    </div> 
+                                     </div>                                 
                             </div> 
                             <!-- end panel sign up -->
                         </form>  

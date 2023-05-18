@@ -11,7 +11,7 @@ class Autonumber {
 	function listofautonumber(){
 		global $mydb;
 		$mydb->setQuery("SELECT * FROM ".self::$tblname);
-		return $cur;
+		return $mydb;
 	}
 	function find_autonumber($name=""){
 		global $mydb;
